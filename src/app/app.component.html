@@ -1,0 +1,99 @@
+<div class="container">
+
+  <br>
+  <br>
+  
+  <div class="col" style="text-align: center;"><h1>{{title}}</h1></div>
+  
+  <div class="col" style="text-align: center;"><h3>{{Macul.getNombre}}, {{Macul.getDireccion}}</h3></div>
+ 
+  <br>
+  <br>
+  
+  <div class="col" style="text-align: left;"><h3>Ingresar un producto:</h3></div>
+  
+  <br>
+
+  <form class="form-group row">
+    <div class="form-group col-md-3">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" placeholder="nombre" class="form-control" [(ngModel)]="cuadroNombre">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="precio">Precio:</label>
+      <input type="text" name="precio" id="precio" placeholder="precio" class="form-control" [(ngModel)]="cuadroPrecio">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="categoria">Categoria:</label>
+      <input type="text" name="categoria" id="categoria" placeholder="categoria" class="form-control" [(ngModel)]="cuadroCategoria">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="cantidad">Cantidad:</label>
+      <input type="text" name="cantidad" id="cantidad" placeholder="cantidad" class="form-control" [(ngModel)]="cuadroCantidad">
+    </div>
+
+    <div class="d-grid gap-2 d-md-block">
+      <button type="submit" class="btn btn-primary" (click)="agregarProducto()" style="margin-top: 25px;">Agregar</button>
+    </div>
+
+  </form>
+
+</div>
+
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div *ngFor = "let p of productos">
+        {{p.getCodigo}} {{p.getNombre}} {{p.getPrecio}} {{p.getCategoria}} {{p.getCantidad}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+  
+  <div class="col" style="text-align: left;"><h3>Hacer una venta:</h3></div>
+  
+  <br>
+
+  <form class="form-group row">
+    <div class="form-group col-md-3">
+      <label for="codigoV">Código producto:</label>
+      <input type="text" name="codigoV" id="codigoV" placeholder="código producto" class="form-control" [(ngModel)]="cuadroCodigoV">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="cantidadV">Cantidad:</label>
+      <input type="text" name="cantidadV" id="cantidadV" placeholder="cantidad producto" class="form-control" [(ngModel)]="cuadroCantidadV">
+    </div>
+    <div class="form-group col-md-3">
+      <label for="medioPagoV">Medio de Pago:</label>
+      <input type="text" name="medioPagoV" id="medioPagoV" placeholder="medio Pago" class="form-control" [(ngModel)]="cuadroMedioPagoV">
+    </div>
+
+    <div class="d-grid gap-2 d-md-block">
+      <button type="submit" class="btn btn-primary" (click)="hacerVenta()" style="margin-top: 25px;">Hacer venta</button>
+    </div>
+
+  </form>
+
+</div>
+
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div *ngFor = "let v of ventas">
+        {{v.getCantidad}} {{v.getDetalle}} {{v.getTotal}} {{v.getMedioPago}}
+      </div>
+    </div>
+  </div>
+</div>
+
